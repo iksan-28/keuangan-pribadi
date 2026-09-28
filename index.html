@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KeuanganKu - Keuangan Pribadi</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div id="loginPage" class="login-page">
+      <div class="login-card">
+        <div class="logo">💰</div>
+        <h1>KeuanganKu</h1>
+        <p>Kelola keuangan pribadi dengan lebih mudah.</p>
+
+        <form id="loginForm">
+          <label for="username">Username</label>
+          <input
+            id="username"
+            type="text"
+            placeholder="Masukkan username"
+            autocomplete="username"
+            required
+          />
+
+          <label for="password">Password</label>
+          <input
+            id="password"
+            type="password"
+            placeholder="Masukkan password"
+            autocomplete="current-password"
+            required
+          />
+
+          <button type="submit" class="primary-btn">Masuk</button>
+          <p id="loginMessage" class="message"></p>
+        </form>
+
+        <small>Demo: username <b>admin</b> · password <b>123456</b></small>
+      </div>
+    </div>
+
+    <div id="app" class="app hidden">
+      <aside class="sidebar">
+        <div class="brand">💰 <span>KeuanganKu</span></div>
+        <nav>
+          <button class="nav-item active" data-page="dashboard">
+            🏠 Dashboard
+          </button>
+          <button class="nav-item" data-page="transactions">
+            💳 Transaksi
+          </button>
+          <button class="nav-item" data-page="reports">📊 Laporan</button>
+        </nav>
+        <button id="logoutBtn" class="logout">↪ Keluar</button>
+      </aside>
+
+      <main class="main">
+        <header class="topbar">
+          <div>
+            <h2 id="pageTitle">Dashboard</h2>
+            <p>Catat dan pantau keuanganmu.</p>
+          </div>
+          <div class="user-badge">👤 <span id="userName">Admin</span></div>
+        </header>
+
+        <section id="dashboardPage" class="page">
+          <div class="cards">
+            <div class="card balance">
+              <span>Saldo</span>
+              <strong id="balance">Rp0</strong>
+            </div>
+            <div class="card income">
+              <span>Total Pemasukan</span>
+              <strong id="income">Rp0</strong>
+            </div>
+            <div class="card expense">
+              <span>Total Pengeluaran</span>
+              <strong id="expense">Rp0</strong>
+            </div>
+          </div>
+
+          <div class="grid-2">
+            <div class="panel">
+              <div class="panel-head">
+                <h3>Tambah Transaksi</h3>
+              </div>
+              <form id="transactionForm" class="transaction-form">
+                <select id="type" required>
+                  <option value="income">Pemasukan</option>
+                  <option value="expense">Pengeluaran</option>
+                </select>
+                <input
+                  id="description"
+                  type="text"
+                  placeholder="Contoh: Gaji / Makan"
+                  required
+                />
+                <input
+                  id="amount"
+                  type="number"
+                  min="1"
+                  placeholder="Jumlah (Rp)"
+                  required
+                />
+                <input id="date" type="date" required />
+                <button class="primary-btn" type="submit">
+                  + Tambah Transaksi
+                </button>
+              </form>
+            </div>
+
+            <div class="panel">
+              <div class="panel-head">
+                <h3>Transaksi Terbaru</h3>
+                <button class="text-btn" data-page="transactions">
+                  Lihat semua
+                </button>
+              </div>
+              <div id="recentTransactions" class="transaction-list"></div>
+            </div>
+          </div>
+        </section>
+
+        <section id="transactionsPage" class="page hidden">
+          <div class="panel">
+            <div class="panel-head">
+              <h3>Semua Transaksi</h3>
+              <button id="clearTransactions" class="danger-btn">
+                Hapus Semua
+              </button>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Tanggal</th>
+                    <th>Keterangan</th>
+                    <th>Jenis</th>
+                    <th>Jumlah</th>
+                    <th>Aksi</th>
+                  </tr>
+                </thead>
+                <tbody id="transactionTable"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <section id="reportsPage" class="page hidden">
+          <div class="panel">
+            <div class="panel-head">
+              <h3>Ringkasan Keuangan</h3>
+            </div>
+            <div class="report-box">
+              <div><span>Pemasukan</span><b id="reportIncome">Rp0</b></div>
+              <div><span>Pengeluaran</span><b id="reportExpense">Rp0</b></div>
+              <div><span>Saldo Akhir</span><b id="reportBalance">Rp0</b></div>
+            </div>
+            <div id="reportText" class="report-text"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
