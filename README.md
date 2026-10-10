@@ -1,18 +1,26 @@
-# KeuanganKu
+💰 KeuanganKu
 
-Website keuangan pribadi sederhana menggunakan HTML, CSS, dan JavaScript.
+Website manajemen keuangan pribadi yang dibuat menggunakan
+HTML, CSS, dan JavaScript.
 
-## Fitur
-- Login dengan username dan password
-- Akses ditolak jika password salah
-- Dashboard saldo
-- Pemasukan dan pengeluaran
-- Tambah dan hapus transaksi
+✨ Fitur
+
+- Login dan registrasi user
+- Dashboard keuangan
+- Pencatatan pemasukan
+- Pencatatan pengeluaran
 - Riwayat transaksi
-- Laporan sederhana
-- Data tersimpan di localStorage browser
-- Responsive untuk layar kecil
+- Perhitungan saldo otomatis
+- Penyimpanan data menggunakan LocalStorage
+- Responsive design
 
-## AKUN LOGIN
-Username: `admin`
-Password: `123456`
+🛠️ Teknologi
+
+- HTML5
+- CSS3
+- JavaScript
+- LocalStorage
+
+## 🌐 Demo
+
+https://username.github.io/keuangan-pribadi/
