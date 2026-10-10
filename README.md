@@ -21,6 +21,6 @@ HTML, CSS, dan JavaScript.
 - JavaScript
 - LocalStorage
 
-## 🌐 Demo
+🌐 Demo
 
-https://username.github.io/keuangan-pribadi/
+https://iksan-28.github.io/keuangan-pribadi/
